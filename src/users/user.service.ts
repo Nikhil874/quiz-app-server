@@ -8,10 +8,10 @@ import {
 
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
-import { IAuth } from 'src/decors/user.decoration';
 import { Quiz } from 'src/quiz/quiz.entity';
 
 import { User } from './user.entity';
+import IAuth from 'src/decors/user.interface';
 @Injectable()
 export class UserService {
   async createUser({ email, password, name }): Promise<any> {

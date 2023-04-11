@@ -13,13 +13,14 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
-import Auth, {IAuth } from 'src/decors/user.decoration';
+import Auth from 'src/decors/user.decoration';
 import { answerSchema } from 'src/dto/answer.schema';
 import { PageSchema, quizSchema } from 'src/dto/quiz.schema';
 import  AuthGuard  from 'src/guards/auth.guard';
 import { IQuestion, Quiz } from './quiz.entity';
 
 import { IAnswer, QuizService } from './quiz.service';
+import IAuth from 'src/decors/user.interface';
 @Controller('/quiz')
 export class QuizController {
   constructor(private readonly quizService: QuizService) {}

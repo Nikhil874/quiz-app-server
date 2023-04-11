@@ -11,12 +11,13 @@ import {
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
-import  Auth, {IAuth } from 'src/decors/user.decoration';
+import  Auth from 'src/decors/user.decoration';
 import { PageSchema } from 'src/dto/quiz.schema';
 import { userSchema } from 'src/dto/user.schema';
 import  AuthGuard  from 'src/guards/auth.guard';
 
 import { UserService } from './user.service';
+import IAuth from 'src/decors/user.interface';
 
 @Controller('/users')
 export class UserController {

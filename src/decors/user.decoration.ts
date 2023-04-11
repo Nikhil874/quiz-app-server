@@ -1,10 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-import { User } from 'src/users/user.entity';
+import IAuth from './user.interface';
 
-export interface IAuth {
-  authUser: User;
-  token: string;
-}
  const Auth = createParamDecorator(
   (data: unknown, ctx: ExecutionContext): IAuth => {
     const request = ctx.switchToHttp().getRequest();
