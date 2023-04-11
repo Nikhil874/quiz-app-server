@@ -5,14 +5,10 @@ import { AppService } from './app.service';
 
 import { QuizModule } from './quiz/quiz.module';
 import { UserModule } from './users/user.module';
+import  config  from 'ormcofig';
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type:'sqlite',
-    database:'db',
-    entities:['dist/src/**/*.entity.js'],
-    synchronize:true,
-}), UserModule, QuizModule],
+  imports: [TypeOrmModule.forRoot(config), UserModule, QuizModule],
   controllers: [AppController],
   providers: [AppService],
 })
