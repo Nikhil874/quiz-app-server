@@ -5,7 +5,7 @@ export interface IAuth {
   authUser: User;
   token: string;
 }
-export const Auth = createParamDecorator(
+ const Auth = createParamDecorator(
   (data: unknown, ctx: ExecutionContext): IAuth => {
     const request = ctx.switchToHttp().getRequest();
     const authUser = request.authUser;
@@ -13,3 +13,5 @@ export const Auth = createParamDecorator(
     return { authUser, token };
   },
 );
+
+export default Auth;

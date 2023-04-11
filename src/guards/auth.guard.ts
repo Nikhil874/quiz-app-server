@@ -12,7 +12,7 @@ import { Reflector } from '@nestjs/core';
 import 'dotenv/config';
 import { User } from 'src/users/user.entity';
 @Injectable()
-export class AuthGuard implements CanActivate {
+ class AuthGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
@@ -36,3 +36,5 @@ export class AuthGuard implements CanActivate {
     }
   }
 }
+
+export default AuthGuard;
